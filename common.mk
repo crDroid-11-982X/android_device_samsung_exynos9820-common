@@ -295,6 +295,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/ril/sehradiomanager.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sehradiomanager.conf
 
+# Rising Flags
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingMaintainer="Jubscleisson"
+
+PRODUCT_NO_CAMERA := true
+TARGET_ENABLE_BLUR := true
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+ifeq ($(WITH_GMS),true)
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+endif
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0.vendor:64 \
